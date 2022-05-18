@@ -1,6 +1,7 @@
 {
-  "name": "sample-pubsub",
-  "version": "0.0.1",
+  "name": "cloud-function-pubsub-trigger-slack-msg",
+  "version": "1.0.0",
+  "description": "Cloud function with pub/sub trigger type. Send message to Slack channel on behalf of user(Bot).",
   "dependencies": {
     "@google-cloud/pubsub": "^0.18.0",
     "dotenv": "^12.0.0"

@@ -1,0 +1,40 @@
+Google Cloud Function triggered by Pub/Sub message being sent on certain topic.
+
+This function is simple example of cloud function with Pub/Sub trigger type which send message to Slack channel on behalf of the user(Bot). User will be defined by user token from Slack. 
+
+We will use test slack channel `test-webshop-cf` to test how this function works.
+
+Runtime: Node.js
+
+### Guidebook to run this function
+1. Clone this repo
+```
+git clone git@github.com:lemon57/cloud-function-pubsub-slack-msg.git
+```
+2. Define Slack user `SLACK_TOKEN` and `SLACK_CHANNEL_ID` in .env file. 
+You can find user `SLACK_TOKEN` -> [Slack user toke](https://api.slack.com/apps/A03FHHA7URG/oauth?).
+And `SLACK_CHANNEL_ID` you will find in description of the channel in Slack.
+3. Deploy this function to GC. Wait a few min ☕
+```
+gcloud functions deploy <CF_NAME> <TRIGGER_TYPE> --region=<REGION_NAME> --runtime=<CF_RUNTIME>
+```
+4. Check that the function deployed successfully: by command or through GCC UI.
+```
+gcloud functions describe <CF_NAME> --region=<REGION_NAME>
+```
+5. Invoke function directly by command:
+```
+gcloud functions call <CF_NAME> --data '{"data":"R29vZ2xlIGNsb3VkIGZ1bmN0aW9uIHdvcmtzaG9w"}'
+```
+This string `R29vZ2xlIGNsb3VkIGZ1bmN0aW9uIHdvcmtzaG9w` base64 encoded. To use your specific message and make it base64 encoded you can use this resource [base64encode](https://www.base64encode.org/)
+
+or by sending message to certain topic by command:
+```
+gcloud pubsub topics publish projects/<PROJECT_NAME>/topics/<TOPIC_NAME> --message Hello
+```
+Replace `PROJECT_NAME` by our current boozt project name.
+Replace `TOPIC_NAME` by this name `test-workshop-cf`. I predefined the topic for workshop.
+
+6. Check slack channel `test-webshop-cf`
+
+Enjoy 🎆
