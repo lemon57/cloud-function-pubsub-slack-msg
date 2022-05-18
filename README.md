@@ -11,9 +11,9 @@ Runtime: Node.js
 ```
 git clone git@github.com:lemon57/cloud-function-pubsub-slack-msg.git
 ```
-2. Define Slack user `SLACK_TOKEN` and `SLACK_CHANNEL_ID` in .env file.\ 
-You can find user `SLACK_TOKEN` -> [Slack user toke](https://api.slack.com/apps/A03FHHA7URG/oauth?).
-And `SLACK_CHANNEL_ID` you will find in description of the channel in Slack.
+2. Define Slack user `SLACK_TOKEN` and `SLACK_CHANNEL_ID` in .env file.\
+You can find user `SLACK_TOKEN` -> [Slack user toke](https://api.slack.com/apps/A03FHHA7URG/oauth?).\
+And `SLACK_CHANNEL_ID` you can find in description of the channel in Slack.
 3. Deploy this function to GC. Wait a few min ☕
 ```
 gcloud functions deploy <CF_NAME> \
