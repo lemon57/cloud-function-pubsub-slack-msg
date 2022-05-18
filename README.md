@@ -11,7 +11,7 @@ Runtime: Node.js
 ```
 git clone git@github.com:lemon57/cloud-function-pubsub-slack-msg.git
 ```
-2. Define Slack user `SLACK_TOKEN` and `SLACK_CHANNEL_ID` in .env file. 
+2. Define Slack user `SLACK_TOKEN` and `SLACK_CHANNEL_ID` in .env file.\ 
 You can find user `SLACK_TOKEN` -> [Slack user toke](https://api.slack.com/apps/A03FHHA7URG/oauth?).
 And `SLACK_CHANNEL_ID` you will find in description of the channel in Slack.
 3. Deploy this function to GC. Wait a few min ☕
@@ -24,7 +24,7 @@ gcloud functions deploy <CF_NAME> \
 ```
 Replace PUB_SUB_TOPIC_NAME by your topic name. Define your own.\
 Replace REGION_NAME by region of current project.\
-Replace CF_RUNTIME by actual runtime, in our case is nodejs16
+Replace CF_RUNTIME by actual runtime, in our case is `nodejs16`
 
 4. Check that the function deployed successfully: by command or through GCC UI.
 ```
@@ -43,9 +43,9 @@ gcloud pubsub topics publish projects/<PROJECT_NAME>/topics/<TOPIC_NAME> --messa
 Replace `PROJECT_NAME` by our current boozt project name.
 Replace `TOPIC_NAME` by topic name which you find by following command:
 ```
-gcloud pubsub topics list | grep workshop
+gcloud pubsub topics list | grep <KEY_WORD_FROM_TOPIC_NAME>
 ```
-The topic for this workshop is predefined.
+Replace `KEY_WORD_FROM_TOPIC_NAME` by topic name which you just recently created when deploy the function.
 
 6. Check the logs:
 ```
