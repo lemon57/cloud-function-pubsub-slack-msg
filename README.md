@@ -24,7 +24,7 @@ gcloud functions deploy <CF_NAME> \
 ```
 Replace PUB_SUB_TOPIC_NAME by your topic name. Define your own.\
 Replace REGION_NAME by region of current project.\
-Replace CF_RUNTIME by actual runtime, in our case is php74
+Replace CF_RUNTIME by actual runtime, in our case is nodejs16
 
 4. Check that the function deployed successfully: by command or through GCC UI.
 ```
