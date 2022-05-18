@@ -33,7 +33,17 @@ or by sending message to certain topic by command:
 gcloud pubsub topics publish projects/<PROJECT_NAME>/topics/<TOPIC_NAME> --message Hello
 ```
 Replace `PROJECT_NAME` by our current boozt project name.
-Replace `TOPIC_NAME` by this name `test-workshop-cf`. I predefined the topic for workshop.
+Replace `TOPIC_NAME` by topic name which you find by following command:
+```
+gcloud pubsub topics list | grep workshop
+```
+The topic for this workshop is predefined.
+
+6. Check the logs:
+```
+gcloud functions logs read --execution-id=<EXECUTION-ID> --region=<REGION_NAME>
+```
+Take `EXECUTION_ID` from the output after executing these commands: `gcloud functions call` or `gcloud pubsub topics publish`.
 
 6. Check slack channel `test-webshop-cf`
 
